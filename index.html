@@ -1,129 +1,536 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>VoltGuard Solutions</title>
-
+<title>VoltGuard Solutions – Automatische handhaving van laadpaalzones</title>
+<meta name="description" content="VoltGuard Solutions helpt gemeenten laadpaalzones automatisch te handhaven met ANPR-technologie, OCPP-koppeling en intelligente dossiercreatie.">
 <link rel="stylesheet" href="style.css">
 <script defer src="script.js"></script>
-
 </head>
-
 <body>
 
-<header class="header">
-
-<div class="container header-inner">
-
-<div class="logo">
-<a href="index.html" aria-label="VoltGuard Solutions home">
-<img src="logo (transparant).png" alt="VoltGuard Solutions logo">
-</a>
-</div>
-
-<nav class="nav">
-<!-- pagina's -->
-<a href="index.html">Home</a>
-<a href="oplossing.html">Oplossing</a>
-<a href="use-cases.html">Use cases</a>
-<a href="over-ons.html">Over ons</a>
-<a href="contact.html">Contact</a>
-
-</nav>
-
-<div class="menu-toggle">
-☰
-</div>
-
-</div>
-
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="#home" aria-label="VoltGuard Solutions home">
+        <img src="logo (transparant).png" alt="VoltGuard Solutions logo">
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="#hoe-het-werkt">Hoe het werkt</a>
+      <a href="#platform">Platform</a>
+      <a href="#technologie">Technologie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="cta-nav">Demo aanvragen</a>
+    <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
-<section class="hero">
-
-<video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-<source src="Background video" type="video/mp4">
-</video>
-
-<div class="hero-overlay" aria-hidden="true"></div>
-
-<div class="container">
-
-<h1>Smart Camera Intelligence for Cities</h1>
-
-<p>
-VoltGuard Solutions helpt steden en gemeenten om parkeerproblemen,
-laadpaalbeheer en handhaving efficiënter te beheren met AI-gestuurde
-cameratechnologie.
-</p>
-
-<a class="cta" href="contact.html">Vraag een demo aan</a>
-
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <a href="#hoe-het-werkt">Hoe het werkt</a>
+  <a href="#platform">Platform</a>
+  <a href="#technologie">Technologie</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="cta">Demo aanvragen</a>
 </div>
 
+<!-- HERO -->
+<section class="hero" id="home">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+    <source src="Background video" type="video/mp4">
+  </video>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Handhavingsplatform voor overheden
+    </div>
+    <h1>Van kentekenherkenning tot handhavingsdossier — volledig automatisch</h1>
+    <p>VoltGuard Solutions helpt gemeenten en steden om laadpaalzones eerlijk en effectief te handhaven. ANPR-camera's, intelligente besluitvorming en automatische dossiercreatie in één platform.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="cta">Demo aanvragen</a>
+      <a href="#hoe-het-werkt" class="cta-outline">Hoe het werkt</a>
+    </div>
+  </div>
 </section>
 
-
-<section class="features">
-
-<div class="container grid">
-
-<div class="feature">
-
-<h3>AI Analyse</h3>
-<p>Realtime analyse van camerabeelden voor parkeerbeheer en handhaving.</p>
-
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="container trust-inner">
+    <span class="trust-label">Gebouwd op</span>
+    <div class="trust-items">
+      <span class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11.5 4L5 16.5l-1.5 2.5H14l1.2-2.5H8.5l4-7.5-1-5zm1.2 0l2.8 7.7L20 16.5H7.7l2.8-5.3 2.2-7.2z" fill="#0078D4"/></svg>
+        Microsoft Azure
+      </span>
+      <span class="trust-divider" aria-hidden="true">·</span>
+      <span class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#1ea672" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#1ea672" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        OCPP-integratie
+      </span>
+      <span class="trust-divider" aria-hidden="true">·</span>
+      <span class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#1ea672" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#1ea672" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        MAGDA-validatie
+      </span>
+      <span class="trust-divider" aria-hidden="true">·</span>
+      <span class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" stroke="#1ea672" stroke-width="2"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="#1ea672" stroke-width="2" stroke-linecap="round"/></svg>
+        GDPR-conform
+      </span>
+    </div>
+  </div>
 </div>
 
-<div class="feature">
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="hoe-het-werkt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Hoe het werkt</span>
+      <h2>Van eerste signalering tot volledig dossier</h2>
+      <p>Elk parkeerincident doorloopt een volledig geautomatiseerde stroom — van cameraobservatie tot een handhavingsklaar dossier in het CRM van uw gemeente.</p>
+    </div>
+    <div class="steps">
 
-<h3>Duurzame mobiliteit</h3>
-<p>Ondersteunt steden bij het verbeteren van mobiliteit en duurzaamheid.</p>
+      <div class="step fade-in">
+        <div class="step-num">01</div>
+        <div class="step-icon">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="20" width="30" height="17" rx="4" stroke="#1ea672" stroke-width="2.5"/>
+            <path d="M10 20l3.5-9h17l3.5 9" stroke="#1ea672" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="11" cy="37" r="3" fill="#1ea672"/>
+            <circle cx="27" cy="37" r="3" fill="#1ea672"/>
+            <path d="M36 14v16M36 14h3.5l-1.5 5h3l-5 9" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step-body">
+          <h3>Voertuig parkeert bij laadpaal</h3>
+          <p>Een voertuig rijdt een laadpaalzone in. Het systeem monitort continu alle bays via geïnstalleerde ANPR-camera's.</p>
+        </div>
+      </div>
 
-</div>
+      <div class="step fade-in">
+        <div class="step-num">02</div>
+        <div class="step-icon">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="14" width="30" height="22" rx="4" stroke="#1ea672" stroke-width="2.5"/>
+            <circle cx="19" cy="25" r="6" stroke="#1ea672" stroke-width="2.5"/>
+            <circle cx="19" cy="25" r="2.5" fill="#1ea672"/>
+            <path d="M34 19l10-5v18l-10-5V19z" stroke="#1ea672" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step-body">
+          <h3>Kenteken automatisch gelezen</h3>
+          <p>De ANPR-camera registreert het kenteken, tijdstip en locatie. De lokale edge-gateway normaliseert en verzendt de data beveiligd naar de cloud.</p>
+        </div>
+      </div>
 
-<div class="feature">
+      <div class="step fade-in">
+        <div class="step-num">03</div>
+        <div class="step-icon">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <ellipse cx="24" cy="12" rx="14" ry="5" stroke="#1ea672" stroke-width="2.5"/>
+            <path d="M10 12v10c0 2.8 6.3 5 14 5s14-2.2 14-5V12" stroke="#1ea672" stroke-width="2.5"/>
+            <path d="M10 22v10c0 2.8 6.3 5 14 5s14-2.2 14-5V22" stroke="#1ea672" stroke-width="2.5"/>
+            <path d="M20 31l2.5 2.5 5.5-5" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step-body">
+          <h3>Laadstatus &amp; voertuigtype gecontroleerd</h3>
+          <p>Via OCPP-koppeling wordt de actuele laadstatus van de laadpaal ophaaald. Via MAGDA wordt het voertuigtype (EV, hybride of verbrandingsmotor) gevalideerd.</p>
+        </div>
+      </div>
 
-<h3>Cloud platform</h3>
-<p>Data en inzichten via een modern cloud dashboard voor steden.</p>
+      <div class="step fade-in">
+        <div class="step-num">04</div>
+        <div class="step-icon">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M24 8c-5.5 0-10 4.5-10 10 0 3.8 2.1 7.1 5.2 8.8V32h9.6v-5.2c3.1-1.7 5.2-5 5.2-8.8 0-5.5-4.5-10-10-10z" stroke="#1ea672" stroke-width="2.5"/>
+            <path d="M19 32h10M20.5 36h7" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M21 17l3 3 5-5" stroke="#1ea672" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step-body">
+          <h3>Intelligente besluitvorming</h3>
+          <p>Configureerbare bedrijfsregels bepalen automatisch het type overtreding: niet-EV, EV-niet-aan-het-laden, of overstayer — per gemeente en zone instelbaar.</p>
+        </div>
+      </div>
 
-</div>
+      <div class="step fade-in">
+        <div class="step-num">05</div>
+        <div class="step-icon">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="12" width="40" height="28" rx="4" stroke="#1ea672" stroke-width="2.5"/>
+            <circle cx="24" cy="26" r="7" stroke="#1ea672" stroke-width="2.5"/>
+            <circle cx="24" cy="26" r="3" fill="#1ea672"/>
+            <path d="M16 12l3-5h10l3 5" stroke="#1ea672" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="37" cy="19" r="2" fill="#1ea672"/>
+          </svg>
+        </div>
+        <div class="step-body">
+          <h3>Bewijsmateriaal automatisch verzameld</h3>
+          <p>Foto's en ondersteunend bewijs worden via cloud-commando's automatisch opgeslagen en gekoppeld aan de parkeersessie, inclusief groepscontext voor aangrenzende bays.</p>
+        </div>
+      </div>
 
-</div>
+      <div class="step fade-in">
+        <div class="step-num">06</div>
+        <div class="step-icon">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="8" y="4" width="26" height="34" rx="3" stroke="#1ea672" stroke-width="2.5"/>
+            <path d="M15 14h16M15 20h16M15 26h10" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="38" cy="34" r="6" fill="#1ea672"/>
+            <path d="M35 34l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step-body">
+          <h3>Handhavingsdossier aangemaakt in CRM</h3>
+          <p>Zodra alle voorwaarden zijn voldaan, wordt automatisch een volledig gedocumenteerd dossier aangemaakt in het CRM van de gemeente — klaar voor verwerking door de dienst.</p>
+        </div>
+      </div>
 
+      <div class="step step-full fade-in">
+        <div class="step-num">07</div>
+        <div class="step-icon">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="4" width="40" height="30" rx="4" stroke="#1ea672" stroke-width="2.5"/>
+            <path d="M12 26l7-9 7 5 7-11" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 40h40" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="step-body">
+          <h3>Inzichten via dashboards &amp; rapportage</h3>
+          <p>Steden krijgen realtime inzicht in bezetting, overtredingstypes en trends via moderne dashboards. Rapportages op locatie- en zoneniveau ondersteunen beleidsmakers met objectieve data.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-
-<section class="about">
-
-<div class="container">
-
-<h2>VoltGuard Solutions 365</h2>
-
-<p>
-Ons platform combineert AI, cameratechnologie en cloudanalyse om steden
-te helpen mobiliteitsproblemen efficiënter te beheren en beleidsbeslissingen
-te ondersteunen met data.
-</p>
-
-</div>
-
+<!-- VIDEO SECTION -->
+<section class="video-section" id="video">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Bekijk het platform</span>
+      <h2>Zie hoe VoltGuard werkt in de praktijk</h2>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-placeholder" role="img" aria-label="Platformdemonstratie video — binnenkort beschikbaar">
+        <div class="play-button" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M9 5l20 11L9 27V5z" fill="white"/></svg>
+        </div>
+        <p>Animatievideo binnenkort beschikbaar</p>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- PLATFORM FEATURES -->
+<section class="platform" id="platform">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Het platform</span>
+      <h2>Alles wat uw gemeente nodig heeft voor effectieve laadpaalhandhaving</h2>
+      <p>Een end-to-end oplossing — van camera tot dossier — gebouwd voor de eisen van lokale overheden.</p>
+    </div>
+    <div class="features-grid">
 
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="14" width="30" height="22" rx="4" stroke="#1ea672" stroke-width="2.5"/>
+            <circle cx="19" cy="25" r="6" stroke="#1ea672" stroke-width="2.5"/>
+            <circle cx="19" cy="25" r="2.5" fill="#1ea672"/>
+            <path d="M34 19l10-5v18l-10-5V19z" stroke="#1ea672" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>ANPR Kentekenherkenning</h3>
+        <p>Integratie met commerciële ANPR-camera's via RTSP, webhooks of vendor-SDK's. De edge-gateway normaliseert alle cameragebeurtenissen naar een uniform formaat voor de cloud.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M24 6l5 10h11l-9 6.5 3.5 10.5L24 26l-10.5 7L17 22.5 8 16h11L24 6z" stroke="#1ea672" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M24 30v12M17 42h14" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>OCPP Laadstatuscontrole</h3>
+        <p>Realtime koppeling met laadpaaloperatoren via CPO REST API, aggregator-API of directe CSMS-feed. Het systeem weet exact of een voertuig daadwerkelijk aan het laden is.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="16" stroke="#1ea672" stroke-width="2.5"/>
+            <path d="M24 16v8l5 3" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 38l3-3M34 38l-3-3" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>MAGDA Voertuigvalidatie</h3>
+        <p>Geïntegreerde raadpleging van MAGDA-diensten voor het bepalen van het voertuigtype. Het systeem valideert of het voertuig elektrisch, hybride of een verbrandingsmotor is.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M24 4L5 14v12c0 10.5 8 20 19 23 11-3 19-12.5 19-23V14L24 4z" stroke="#1ea672" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M17 24l5 5 9-9" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Automatische besluitvorming</h3>
+        <p>Per gemeente en zone configureerbare bedrijfsregels met tolerantietijden, tarieven en uitzonderingsbeleid. Het systeem beslist zelfstandig, zonder handmatige tussenkomst.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="12" width="40" height="28" rx="4" stroke="#1ea672" stroke-width="2.5"/>
+            <circle cx="24" cy="26" r="7" stroke="#1ea672" stroke-width="2.5"/>
+            <circle cx="24" cy="26" r="3" fill="#1ea672"/>
+            <path d="M16 12l3-5h10l3 5" stroke="#1ea672" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Bewijsverzameling &amp; -beheer</h3>
+        <p>Automatische fotovastlegging via cloud-commando's naar de edge-gateway. Bewijs wordt georganiseerd per sessie met volledige audittrail en configureerbaar retentiebeleid.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="8" y="4" width="26" height="34" rx="3" stroke="#1ea672" stroke-width="2.5"/>
+            <path d="M15 14h16M15 20h16M15 26h10" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="38" cy="34" r="6" fill="#1ea672"/>
+            <path d="M35 34l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Automatische CRM-dossiercreatie</h3>
+        <p>Volledige integratie met Dataverse/Dynamics voor directe aanmaak van handhavingsdossiers. CRM ontvangt enkel definitieve of reviewbare cases — geen telemetrieruis.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="4" width="40" height="30" rx="4" stroke="#1ea672" stroke-width="2.5"/>
+            <path d="M12 26l7-9 7 5 7-11" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 40h40" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Dashboards &amp; Rapportage</h3>
+        <p>Realtime inzichten via Power BI dashboards op locatie- en zoneniveau. Bezettingsgraden, overtredingstypes en handhavingstrends ondersteunen beleidsmakers met objectieve data.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="4" width="18" height="18" rx="3" stroke="#1ea672" stroke-width="2.5"/>
+            <rect x="26" y="4" width="18" height="18" rx="3" stroke="#1ea672" stroke-width="2.5"/>
+            <rect x="4" y="26" width="18" height="18" rx="3" stroke="#1ea672" stroke-width="2.5"/>
+            <rect x="26" y="26" width="18" height="18" rx="3" stroke="#1ea672" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <h3>Multi-stad SaaS platform</h3>
+        <p>Elke gemeente krijgt geïsoleerde Azure-resources binnen een centraal beheerde omgeving. Volledige data-isolatie, aparte kostenzichtbaarheid en eenvoudig offboarden per stad.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGY -->
+<section class="technology" id="technologie">
+  <div class="container">
+    <div class="tech-layout">
+      <div class="tech-content fade-in">
+        <span class="section-tag">Technologie</span>
+        <h2>Enterprise-grade cloudarchitectuur op Microsoft Azure</h2>
+        <p>VoltGuard volgt een strikte edge-to-cloud architectuur waarbij elke component een duidelijke, enkelvoudige verantwoordelijkheid heeft. Gebouwd voor betrouwbaarheid, beveiliging en schaalbaarheid.</p>
+        <ul class="tech-list">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 7" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Edge Gateway</strong> — Lokale normalisatie en buffering, beveiligd met X.509-certificaten en TPM 2.0</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 7" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Azure IoT Hub</strong> — Beveiligd cloud-eindpunt voor apparaattelemetrie en cloud-to-device commando's</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 7" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Azure Durable Functions</strong> — Stateful sessieworkflow die wacht op herhaaldetecties en timers voor correcte dweiltijdberekening</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 7" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Azure SQL &amp; Blob Storage</strong> — Operationele staat per parkeersessie in SQL, ruwe events en bewijsfoto's in Blob</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4L19 7" stroke="#1ea672" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Key Vault &amp; Managed Identity</strong> — Geen hardcoded credentials, volledige secrets management conform Azure best practices</span>
+          </li>
+        </ul>
+      </div>
+      <div class="tech-diagram fade-in">
+        <div class="arch-flow">
+          <div class="arch-node arch-edge">
+            <div class="arch-icon">
+              <svg width="20" height="20" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="4" y="14" width="30" height="22" rx="4" stroke="currentColor" stroke-width="2.5"/><circle cx="19" cy="25" r="5" stroke="currentColor" stroke-width="2.5"/><path d="M34 19l10-5v18l-10-5V19z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+            </div>
+            <span>ANPR Camera</span>
+          </div>
+          <div class="arch-arrow" aria-hidden="true">↓</div>
+          <div class="arch-node arch-edge">
+            <div class="arch-icon">
+              <svg width="20" height="20" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="6" y="8" width="36" height="26" rx="3" stroke="currentColor" stroke-width="2.5"/><path d="M16 40h16M24 34v6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+            <span>Edge Gateway (lokaal)</span>
+          </div>
+          <div class="arch-arrow" aria-hidden="true">↓</div>
+          <div class="arch-node arch-cloud">
+            <div class="arch-icon">
+              <svg width="20" height="20" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M36 22c0-6.6-5.4-12-12-12-5.5 0-10 3.5-11.5 8.5C10 18.5 7 21 7 24c0 4 3.3 7 7 7h20c3.3 0 6-2.7 6-6 0-2.8-1.9-5.1-4-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+            <span>Azure IoT Hub</span>
+          </div>
+          <div class="arch-arrow" aria-hidden="true">↓</div>
+          <div class="arch-node arch-cloud">
+            <div class="arch-icon">
+              <svg width="20" height="20" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6l5 10h11l-9 6.5 3.5 10.5L24 26l-10.5 7L17 22.5 8 16h11z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Functions &amp; Durable</span>
+          </div>
+          <div class="arch-arrow" aria-hidden="true">↓</div>
+          <div class="arch-node arch-output">
+            <div class="arch-icon">
+              <svg width="20" height="20" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="8" y="4" width="26" height="34" rx="3" stroke="currentColor" stroke-width="2.5"/><path d="M15 14h16M15 20h16M15 26h10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="38" cy="34" r="6" fill="currentColor" opacity="0.2"/><path d="M35 34l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>CRM Handhavingsdossier</span>
+          </div>
+        </div>
+        <div class="arch-labels">
+          <span>Laadpaallocatie</span>
+          <span>Microsoft Azure</span>
+          <span>Gemeente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag light">Waarom VoltGuard</span>
+      <h2 class="light-text">Slimmere steden beginnen met eerlijke laadpaalzones</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-in">
+        <div class="why-number">100%</div>
+        <h3>Geautomatiseerd</h3>
+        <p>Geen handmatige controles, geen subjectiviteit. Van observatie tot dossier verloopt het volledig automatisch.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-number">3</div>
+        <h3>Overtredingstypes</h3>
+        <p>Niet-EV, EV-niet-ladend en overstayer worden elk herkend en verwerkt met aangepaste regels per gemeente.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-number">24/7</div>
+        <h3>Continue bewaking</h3>
+        <p>Elk incident wordt geregistreerd, ongeacht tijdstip of omstandigheid. Geen blinde vlekken in uw handhaving.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-number">0</div>
+        <h3>Handmatige stappen</h3>
+        <p>Van eerste signalering tot volledig CRM-dossier — geen tussenkomst van medewerkers vereist voor standaardgevallen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <div class="container cta-inner">
+    <div class="cta-content">
+      <span class="section-tag light">Aan de slag</span>
+      <h2>Klaar om uw laadpaalzones eerlijker te maken?</h2>
+      <p>Ontdek hoe VoltGuard Solutions uw gemeente helpt bij effectieve en volledig automatische handhaving. Vraag een persoonlijke demonstratie aan.</p>
+      <div class="cta-actions">
+        <a href="mailto:info@voltguardsolutions.be" class="cta">Demo aanvragen</a>
+        <a href="mailto:info@voltguardsolutions.be" class="contact-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          info@voltguardsolutions.be
+        </a>
+      </div>
+    </div>
+    <div class="cta-visual" aria-hidden="true">
+      <div class="crm-card">
+        <div class="crm-header">
+          <span class="status-dot"></span>
+          <span>Nieuw handhavingsdossier aangemaakt</span>
+        </div>
+        <div class="crm-body">
+          <div class="crm-row">
+            <span class="crm-label">Kenteken</span>
+            <span class="crm-value">1-ABC-123</span>
+          </div>
+          <div class="crm-row">
+            <span class="crm-label">Type overtreding</span>
+            <span class="crm-value crm-violation">Niet-EV voertuig</span>
+          </div>
+          <div class="crm-row">
+            <span class="crm-label">Locatie</span>
+            <span class="crm-value">Gent · Zone Centrum</span>
+          </div>
+          <div class="crm-row">
+            <span class="crm-label">Verblijfsduur</span>
+            <span class="crm-value">47 minuten</span>
+          </div>
+          <div class="crm-row">
+            <span class="crm-label">Bewijs</span>
+            <span class="crm-value">3 foto's ✓</span>
+          </div>
+          <div class="crm-row">
+            <span class="crm-label">Status</span>
+            <span class="crm-badge">Klaar voor verwerking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
-
-<div class="container footer-inner">
-
-<p>© 2026 VoltGuard Solutions</p>
-
-<p>info@voltguardsolutions.be</p>
-
-</div>
-
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <img src="logo (transparant).png" alt="VoltGuard Solutions" class="footer-logo">
+      <p>Automatische handhaving van laadpaalzones voor gemeenten en steden.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="#hoe-het-werkt">Hoe het werkt</a>
+        <a href="#platform">Functies</a>
+        <a href="#technologie">Technologie</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@voltguardsolutions.be">info@voltguardsolutions.be</a>
+        <a href="#contact">Demo aanvragen</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 VoltGuard Solutions. Alle rechten voorbehouden.</p>
+    </div>
+  </div>
 </footer>
 
 </body>
