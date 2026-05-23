@@ -97,76 +97,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-const scenarios = {
-  nonEv: {
-    title: "Niet-EV voertuig op laadplek",
-    copy: "Het kenteken wordt gekoppeld aan een voertuig zonder elektrische of hybride aandrijving. De laadplek wordt dus geblokkeerd zonder laaddoel.",
-    evidence: ["ANPR snapshot", "Locatie en tijdstip", "Voertuigtype validatie", "CRM dossier klaar"]
-  },
-  notCharging: {
-    title: "EV aanwezig, maar geen actieve laadsessie",
-    copy: "Het voertuig is elektrisch, maar de laadpaaldata bevestigt geen actieve sessie. VoltGuard wacht de ingestelde tolerantie af en bouwt daarna de case op.",
-    evidence: ["ANPR snapshot", "OCPP status: idle", "Tolerantie verstreken", "Reviewbare case"]
-  },
-  overstay: {
-    title: "Overstay na afgeronde laadsessie",
-    copy: "De laadsessie is voltooid of de maximale parkeertijd is overschreden. De bezette bay wordt gekoppeld aan duur, status en bewijsbeelden.",
-    evidence: ["Start en eindtijd", "Laadsessie voltooid", "Overstay timer", "CRM dossier klaar"]
-  }
-};
-
-const scenarioTitle = document.getElementById("scenario-title");
-const scenarioCopy = document.getElementById("scenario-copy");
-const scenarioEvidence = document.getElementById("scenario-evidence");
-
-document.querySelectorAll(".scenario-tab").forEach((button) => {
-  button.addEventListener("click", () => {
-    const scenario = scenarios[button.dataset.scenario];
-
-    document.querySelectorAll(".scenario-tab").forEach((tab) => {
-      const isActive = tab === button;
-      tab.classList.toggle("is-active", isActive);
-      tab.setAttribute("aria-selected", String(isActive));
-    });
-
-    scenarioTitle.textContent = scenario.title;
-    scenarioCopy.textContent = scenario.copy;
-    scenarioEvidence.innerHTML = scenario.evidence
-      .map((item, index) => `<div class="evidence-item ${index < 3 ? "is-complete" : ""}">${item}</div>`)
-      .join("");
-  });
-});
-
-const countObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      return;
-    }
-
-    const element = entry.target;
-    const target = Number(element.dataset.count || "0");
-    const duration = reduceMotion ? 1 : 1200;
-    const start = performance.now();
-
-    function tick(now) {
-      const progressValue = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progressValue, 3);
-      element.textContent = Math.round(target * eased);
-
-      if (progressValue < 1) {
-        requestAnimationFrame(tick);
-      }
-    }
-
-    requestAnimationFrame(tick);
-    countObserver.unobserve(element);
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll("[data-count]").forEach((element) => {
-  countObserver.observe(element);
-});
-
 if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
   document.querySelectorAll("[data-tilt]").forEach((card) => {
     card.addEventListener("pointermove", (event) => {
@@ -199,16 +129,3 @@ if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
     });
   });
 }
-
-const teaser = document.querySelector(".play-teaser");
-teaser?.addEventListener("click", () => {
-  teaser.animate([
-    { transform: "scale(1)" },
-    { transform: "scale(0.92)" },
-    { transform: "scale(1.06)" },
-    { transform: "scale(1)" }
-  ], {
-    duration: 520,
-    easing: "cubic-bezier(0.16, 1, 0.3, 1)"
-  });
-});
