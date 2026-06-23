@@ -1,337 +1,285 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta name="google-site-verification" content="eCS3VljCIB4j2xvNQY7IN8n4BhXvLf1OauFYmqvjeEI" />
+  <meta name="google-site-verification" content="eCS3VljCIB4j2xvNQY7IN8n4BhXvLf1OauFYmqvjeEI">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoltGuard Solutions | Slimme handhaving van EV-laadplaatsen</title>
-  <meta name="description" content="VoltGuard Solutions helpt steden en gemeenten laadplaatsen beschikbaar te houden met automatische detectie, beslisregels en handhavingsdossiers.">
-  <meta name="theme-color" content="#06140f">
+  <title>VoltGuard Solutions | Laadpaalhandhaving voor gemeenten</title>
+  <meta name="description" content="VoltGuard Solutions helpt steden en gemeenten EV-laadplaatsen beschikbaar houden met laadplaatscontrole, laadstatusvalidatie, ANPR-signalen en duidelijke dossieropbouw.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#071d18">
+  <link rel="canonical" href="https://voltguardsolutions.be/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:title" content="VoltGuard Solutions | Laadpaalhandhaving voor gemeenten">
+  <meta property="og:description" content="Een uitlegbare controleflow voor EV-laadplaatsen: detectie, laadstatus, beleidsregels en dossieropbouw.">
+  <meta property="og:url" content="https://voltguardsolutions.be/">
+  <meta property="og:image" content="https://voltguardsolutions.be/assets/hero-ev-enforcement.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VoltGuard Solutions | Laadpaalhandhaving voor gemeenten">
+  <meta name="twitter:description" content="Laadplaatscontrole en dossieropbouw voor steden en gemeenten die EV-laadplaatsen bruikbaar willen houden.">
+  <meta name="twitter:image" content="https://voltguardsolutions.be/assets/hero-ev-enforcement.png">
+  <link rel="icon" type="image/png" href="FINAL.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VoltGuard Solutions",
+    "url": "https://voltguardsolutions.be/",
+    "logo": "https://voltguardsolutions.be/FINAL.png",
+    "description": "VoltGuard Solutions ondersteunt lokale overheden met laadplaatscontrole en laadpaalhandhaving voor EV-laadplaatsen.",
+    "image": "https://voltguardsolutions.be/assets/hero-ev-enforcement.png"
+  }
+  </script>
 </head>
-<body>
-  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
-
+<body data-contact-email="info@voltguardsolutions.be">
   <header class="site-header" id="site-header">
-    <div class="container nav-shell">
+    <div class="container header-inner">
       <a class="brand" href="./" aria-label="VoltGuard Solutions home">
-        <img src="logo (transparant).png" alt="VoltGuard Solutions logo">
+        <img class="brand-logo" src="FINAL.png" alt="VoltGuard Solutions">
       </a>
-      <nav class="primary-nav" aria-label="Hoofdnavigatie">
+      <nav class="desktop-nav" aria-label="Hoofdnavigatie">
         <a href="./" aria-current="page">Home</a>
         <a href="wat-we-doen/">Wat we doen</a>
         <a href="over-ons/">Over ons</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="nav-cta magnetic" href="mailto:info@voltguardsolutions.be?subject=Demo%20VoltGuard%20Solutions">Demo aanvragen</a>
+      <a class="header-cta" href="#contact">Plan gesprek</a>
       <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-nav">
         <span></span>
         <span></span>
       </button>
     </div>
-    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobiele navigatie" aria-hidden="true">
       <a href="./" aria-current="page">Home</a>
       <a href="wat-we-doen/">Wat we doen</a>
       <a href="over-ons/">Over ons</a>
       <a href="#contact">Contact</a>
-      <a href="mailto:info@voltguardsolutions.be?subject=Demo%20VoltGuard%20Solutions">Demo aanvragen</a>
-    </div>
+    </nav>
   </header>
 
   <main>
-    <section class="hero section-dark" id="home">
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-        <source src="Background video" type="video/mp4">
-      </video>
-      <div class="video-wash" aria-hidden="true"></div>
-      <div class="noise" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
-
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <h1>Slimme controle op laden, parkeren en laadklevers.</h1>
-          <p class="hero-lede">VoltGuard helpt steden en gemeenten EV-laadplaatsen beschikbaar te houden door misbruik automatisch te signaleren en om te zetten in duidelijke, onderbouwde dossiers.</p>
+    <section class="hero home-hero" aria-label="VoltGuard Solutions">
+      <img class="hero-image" src="assets/hero-ev-enforcement.png" alt="EV-laadplaatsen in een stedelijke straat met twee elektrische wagens die laden">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">EV-laadplaatsen beschikbaar houden</p>
+          <h1>Handhaving voor <span class="hero-title-line">EV-laadplaatsen</span></h1>
+          <p class="hero-lede">VoltGuard Solutions brengt detectie, laadstatus, lokale regels en bewijs samen in een controleflow die handhaving helpt beslissen wat echt opvolging verdient.</p>
           <div class="hero-actions">
-            <a class="button button-primary magnetic" href="wat-we-doen/">
-              Bekijk wat we doen
-              <span aria-hidden="true">-></span>
-            </a>
-            <a class="button button-ghost" href="mailto:info@voltguardsolutions.be?subject=Demo%20VoltGuard%20Solutions">Plan een gesprek</a>
-          </div>
-        </div>
-
-        <div class="hero-panel reveal" data-tilt>
-          <div class="panel-topline">
-            <span class="live-dot"></span>
-            Controleflow
-          </div>
-          <div class="plate-scan">
-            <div class="scan-frame">
-              <span class="scan-line" aria-hidden="true"></span>
-              <div class="license-plate">1-EVB-482</div>
-            </div>
-            <div class="scan-meta">
-              <span>Laadplaats C-04</span>
-              <span>Stadscentrum</span>
-            </div>
-          </div>
-          <div class="decision-card">
-            <div>
-              <span class="mini-label">Beoordeling</span>
-              <strong>Controle op laadstatus vereist</strong>
-            </div>
-            <span class="severity">Onderbouwd</span>
-          </div>
-          <div class="signal-stack" aria-label="Datacontroles">
-            <div class="signal-row is-ok">
-              <span>Kentekenherkenning</span>
-              <strong>Gekoppeld</strong>
-            </div>
-            <div class="signal-row is-ok">
-              <span>Voertuigtype</span>
-              <strong>Gecontroleerd</strong>
-            </div>
-            <div class="signal-row is-warning">
-              <span>Laadstatus</span>
-              <strong>Te valideren</strong>
-            </div>
-            <div class="signal-row is-ok">
-              <span>Bewijsmateriaal</span>
-              <strong>Verzameld</strong>
-            </div>
-          </div>
-          <div class="case-footer">
-            <span>Van detectie</span>
-            <strong>naar dossier</strong>
+            <a class="button button-primary" href="#contact">Bespreek een pilot</a>
+            <a class="button button-secondary" href="wat-we-doen/">Bekijk de aanpak</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="problem section-light" id="probleem">
-      <div class="container split-layout">
-        <div class="section-intro reveal">
-          <p class="eyebrow dark">
-            <span></span>
-            Het probleem
-          </p>
-          <h2>Laadplaatsen zijn schaars. Slimme handhaving houdt ze beschikbaar.</h2>
-          <p>Misbruik beperkt toegang tot laden. Denk aan voertuigen die niet elektrisch zijn, EV's die niet laden of bestuurders die blijven staan nadat laden niet langer het doel is.</p>
-        </div>
-        <div class="problem-grid">
-          <article class="problem-card reveal" data-tilt>
-            <span class="card-index">01</span>
-            <h3>Niet-EV op laadplek</h3>
-            <p>Een laadplaats wordt bezet door een voertuig dat daar niet hoort te staan.</p>
-          </article>
-          <article class="problem-card reveal" data-tilt>
-            <span class="card-index">02</span>
-            <h3>EV zonder actieve laadsessie</h3>
-            <p>Het voertuig is elektrisch, maar de laadpaal bevestigt geen lopende sessie.</p>
-          </article>
-          <article class="problem-card reveal" data-tilt>
-            <span class="card-index">03</span>
-            <h3>Overstay na laadsessie</h3>
-            <p>De laadsessie is klaar of de maximale tijd is voorbij, maar de plek blijft bezet.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="workflow section-light" id="workflow">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow dark">
-            <span></span>
-            Hoe het werkt
-          </p>
-          <h2>Van parkeermoment naar onderbouwde beoordeling.</h2>
-          <p>VoltGuard combineert observaties, laadstatus, voertuigtype en lokale regels in een controleerbare flow.</p>
-        </div>
-        <div class="timeline" aria-label="VoltGuard workflow">
-          <article class="timeline-step reveal">
-            <span>01</span>
-            <h3>Detectie</h3>
-            <p>Een voertuig wordt aan een laadplaats geregistreerd met tijd en locatie.</p>
-          </article>
-          <article class="timeline-step reveal">
-            <span>02</span>
-            <h3>Datacontrole</h3>
-            <p>Het platform controleert voertuigtype en laadstatus via gekoppelde bronnen.</p>
-          </article>
-          <article class="timeline-step reveal">
-            <span>03</span>
-            <h3>Regels</h3>
-            <p>Lokale beleidsregels bepalen of een situatie aandacht of opvolging vraagt.</p>
-          </article>
-          <article class="timeline-step reveal">
-            <span>04</span>
-            <h3>Bewijs</h3>
-            <p>Relevante foto's, tijdlijn en context worden automatisch samengebracht.</p>
-          </article>
-          <article class="timeline-step reveal">
-            <span>05</span>
-            <h3>Dossier</h3>
-            <p>Alleen voldoende onderbouwde cases worden klaargezet voor verwerking.</p>
-          </article>
-          <article class="timeline-step reveal">
-            <span>06</span>
-            <h3>Inzicht</h3>
-            <p>Dashboards tonen bezetting, trends en terugkerende knelpunten per locatie.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="platform section-light" id="platform">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow dark">
-            <span></span>
-            Platform
-          </p>
-          <h2>Een volledige controleketen voor gemeenten.</h2>
-          <p>Geen losse camera-tool en geen dashboard zonder opvolging. VoltGuard brengt detectie, beoordeling, bewijs en rapportage samen.</p>
-        </div>
-        <div class="feature-grid">
-          <article class="feature-card reveal" data-tilt>
-            <div class="feature-icon">AN</div>
-            <h3>Kentekenherkenning</h3>
-            <p>Observaties worden gekoppeld aan plaats, tijdstip en parkeercontext.</p>
-          </article>
-          <article class="feature-card reveal" data-tilt>
-            <div class="feature-icon">LS</div>
-            <h3>Laadstatuscontrole</h3>
-            <p>Het platform controleert of de laadplaats effectief gebruikt wordt om te laden.</p>
-          </article>
-          <article class="feature-card reveal" data-tilt>
-            <div class="feature-icon">VT</div>
-            <h3>Voertuigtype</h3>
-            <p>Het systeem onderscheidt relevante voertuigcategorieen voor correcte beoordeling.</p>
-          </article>
-          <article class="feature-card reveal" data-tilt>
-            <div class="feature-icon">RG</div>
-            <h3>Regelset per gemeente</h3>
-            <p>Toleranties, zones en uitzonderingen kunnen afgestemd worden op lokaal beleid.</p>
-          </article>
-          <article class="feature-card reveal" data-tilt>
-            <div class="feature-icon">BW</div>
-            <h3>Bewijsbeheer</h3>
-            <p>Foto's en beslissingscontext blijven gekoppeld aan dezelfde parkeersessie.</p>
-          </article>
-          <article class="feature-card reveal" data-tilt>
-            <div class="feature-icon">DB</div>
-            <h3>Dashboards</h3>
-            <p>Bezetting, misbruikscenario's en locaties met structurele druk worden zichtbaar.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="architecture section-dark" id="architectuur">
-      <div class="noise" aria-hidden="true"></div>
-      <div class="container architecture-grid">
-        <div class="section-intro reveal">
-          <p class="eyebrow">
-            <span></span>
-            Controleketen
-          </p>
-          <h2>Een technologie-neutrale flow van observatie naar dossier.</h2>
-          <p>De exacte technische koppelingen kunnen verschillen per stad. De kern blijft dezelfde: betrouwbare signalen combineren, regels toepassen en alleen bruikbare cases doorzetten.</p>
-          <ul class="check-list">
-            <li>Observatie aan de laadplaats</li>
-            <li>Controle van voertuigtype en laadstatus</li>
-            <li>Beoordeling met lokale regels</li>
-            <li>Dossier en inzichten voor opvolging</li>
-          </ul>
-        </div>
-        <div class="orbit-map reveal" data-tilt aria-label="Technologie-neutrale controleflow">
-          <div class="orbit-ring"></div>
-          <div class="orbit-ring ring-two"></div>
-          <div class="orbit-core">
-            <span>VoltGuard</span>
-            <strong>Platform</strong>
-          </div>
-          <div class="orbit-node node-camera">Camera</div>
-          <div class="orbit-node node-data">Data</div>
-          <div class="orbit-node node-rules">Regels</div>
-          <div class="orbit-node node-crm">Dossier</div>
-          <div class="orbit-node node-bi">Inzicht</div>
-          <svg class="orbit-lines" viewBox="0 0 520 520" aria-hidden="true">
-            <path d="M94 250 C170 170, 330 170, 426 250" />
-            <path d="M94 280 C170 360, 330 360, 426 280" />
-            <path d="M250 95 C330 175, 330 345, 250 425" />
-            <path d="M270 95 C190 175, 190 345, 270 425" />
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <section class="outcomes section-light">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow dark">
-            <span></span>
-            Resultaat
-          </p>
-          <h2>Wat dit oplevert voor steden en gemeenten.</h2>
-        </div>
-        <div class="outcome-grid">
-          <article class="outcome-card reveal">
-            <strong>AI</strong>
-            <span>Automatische beoordeling</span>
-            <p>Beoordeling op basis van meerdere databronnen in plaats van een enkel signaal.</p>
-          </article>
-          <article class="outcome-card reveal">
-            <strong>24/7</strong>
-            <span>Realtime handhaving</span>
-            <p>Detectie overdag en 's nachts, zonder extra manuele controlerondes.</p>
-          </article>
-          <article class="outcome-card reveal">
-            <strong>1</strong>
-            <span>Centraal proces</span>
-            <p>Van ANPR-detectie tot handhavingsdossier in een samenhangende flow.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact section-dark" id="contact">
-      <div class="noise" aria-hidden="true"></div>
-      <div class="container contact-card reveal">
+    <section class="metric-strip" aria-label="Kern van de oplossing">
+      <div class="container metric-grid">
         <div>
-          <p class="eyebrow">
-            <span></span>
-            Aan de slag
-          </p>
-          <h2>Klaar om laadpaalzones eerlijker en slimmer te handhaven?</h2>
-          <p>We tonen graag hoe VoltGuard past binnen uw stad, camera-infrastructuur, laadpaaldata en handhavingsproces.</p>
+          <span>Detectie</span>
+          <strong>ANPR + context</strong>
         </div>
-        <div class="contact-actions">
-          <a class="button button-primary magnetic" href="mailto:info@voltguardsolutions.be?subject=Demo%20VoltGuard%20Solutions">Demo aanvragen</a>
-          <a class="mail-link" href="mailto:info@voltguardsolutions.be">info@voltguardsolutions.be</a>
+        <div>
+          <span>Validatie</span>
+          <strong>Laadstatus</strong>
         </div>
+        <div>
+          <span>Beslissing</span>
+          <strong>Review en dossier</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section" aria-labelledby="promo-video-title">
+      <div class="container video-showcase">
+        <div class="video-showcase-copy">
+          <p class="eyebrow">Bekijk VoltGuard in actie</p>
+          <h2 id="promo-video-title">VoltGuard in actie.</h2>
+        </div>
+        <div class="promo-video-card promo-video-wide" aria-label="VoltGuard Solutions promo video">
+          <video controls playsinline preload="metadata" poster="FINAL.png">
+            <source src="VoltGuard%20Solutions%20Promo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="video-support">De promo toont hoe VoltGuard Solutions detectie, laadstatus en beslislogica vertaalt naar een duidelijk proces voor gemeenten.</p>
+      </div>
+    </section>
+
+    <section class="section band-white">
+      <div class="container intro-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Het probleem</p>
+          <h2>Laadplaatsen moeten vrij blijven.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>Gemeenten investeren in publieke laadinfrastructuur, maar foutparkeren, niet-laden en langdurig bezet houden maken die infrastructuur minder betrouwbaar. VoltGuard Solutions helpt het verschil maken tussen een los signaal en een uitlegbare handhavingsbeslissing.</p>
+          <p>De oplossing is gebouwd voor publieke teams die duidelijke context nodig hebben: waar stond het voertuig, wat is de laadstatus, welke regel geldt lokaal en is de situatie dossierwaardig?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band-light">
+      <div class="container">
+        <div class="section-heading wide">
+          <p class="eyebrow">Waar VoltGuard op let</p>
+          <h2>Drie typische blokkades.</h2>
+        </div>
+        <div class="issue-grid">
+          <article class="issue-card">
+            <span>01</span>
+            <h3>Niet-elektrisch voertuig</h3>
+            <p>Een wagen zonder laadfunctie bezet een plek die bedoeld is voor een actieve laadsessie.</p>
+          </article>
+          <article class="issue-card">
+            <span>02</span>
+            <h3>EV zonder actieve sessie</h3>
+            <p>Het voertuig kan laden, maar de laadstatus bevestigt geen lopende sessie.</p>
+          </article>
+          <article class="issue-card">
+            <span>03</span>
+            <h3>Overstay na laden</h3>
+            <p>De laadsessie is voorbij of de toegestane tijd verstreken terwijl de plaats bezet blijft.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band-dark">
+      <div class="container process-layout">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">Controleflow</p>
+          <h2>Van straatwaarneming naar bruikbare beslissing.</h2>
+          <p>VoltGuard beoordeelt niet op basis van een losse scan. De flow verrijkt, toetst en ordent de informatie voordat er een case ontstaat.</p>
+        </div>
+        <div class="process-list">
+          <article>
+            <span>1</span>
+            <div>
+              <h3>Waarnemen</h3>
+              <p>Kenteken, laadplaats, tijdstip en locatie worden vastgelegd.</p>
+            </div>
+          </article>
+          <article>
+            <span>2</span>
+            <div>
+              <h3>Verrijken</h3>
+              <p>Voertuigtype, laadstatus en relevante bronnen vullen het signaal aan.</p>
+            </div>
+          </article>
+          <article>
+            <span>3</span>
+            <div>
+              <h3>Toetsen</h3>
+              <p>Lokale regels, zones, toleranties en uitzonderingen bepalen de beoordeling.</p>
+            </div>
+          </article>
+          <article>
+            <span>4</span>
+            <div>
+              <h3>Onderbouwen</h3>
+              <p>Alleen waar nodig wordt extra bewijs gekoppeld aan de case.</p>
+            </div>
+          </article>
+          <article>
+            <span>5</span>
+            <div>
+              <h3>Uitsturen</h3>
+              <p>De uitkomst wordt review, dossier of dashboardinzicht voor beleid.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band-light">
+      <div class="container outcome-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Resultaat</p>
+          <h2>Minder ruis, meer grip.</h2>
+        </div>
+        <div class="outcome-panel">
+          <article>
+            <h3>Heldere reviewlijst</h3>
+            <p>Twijfelgevallen blijven zichtbaar zonder meteen als dossier te worden behandeld.</p>
+          </article>
+          <article>
+            <h3>Onderbouwde dossiers</h3>
+            <p>Een case bevat context over locatie, tijd, status en de toegepaste beleidsregel.</p>
+          </article>
+          <article>
+            <h3>Patronen in beeld</h3>
+            <p>Dashboards tonen waar bezetting, misbruik en terugkerende knelpunten ontstaan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Bespreek uw laadplaatsen, regels en handhavingsvragen.</h2>
+          <p>Vertel kort welke situatie speelt. We nemen contact op om te bekijken of een demo, pilot of technische verkenning zinvol is.</p>
+        </div>
+        <form class="contact-form" data-mail-form>
+          <div class="form-grid">
+            <label>
+              <span>Naam</span>
+              <input type="text" name="Naam" autocomplete="name" required>
+            </label>
+            <label>
+              <span>Organisatie</span>
+              <input type="text" name="Organisatie" autocomplete="organization" required>
+            </label>
+            <label>
+              <span>E-mail</span>
+              <input type="email" name="E-mail" autocomplete="email" required>
+            </label>
+            <label>
+              <span>Telefoon</span>
+              <input type="tel" name="Telefoon" autocomplete="tel">
+            </label>
+            <label class="full">
+              <span>Onderwerp</span>
+              <select name="Onderwerp" required>
+                <option value="">Kies een onderwerp</option>
+                <option>Demo aanvragen</option>
+                <option>Pilot of proefproject</option>
+                <option>Beleid en handhaving</option>
+                <option>Integratie met bestaande systemen</option>
+              </select>
+            </label>
+            <label class="full">
+              <span>Bericht</span>
+              <textarea name="Bericht" rows="5" placeholder="Welke laadplaatsen of situaties wilt u bespreken?" required></textarea>
+            </label>
+          </div>
+          <button class="button button-primary" type="submit">Verzenden</button>
+          <p class="form-feedback" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <a class="footer-brand" href="./" aria-label="VoltGuard Solutions home">
-        <img src="logo (transparant).png" alt="VoltGuard Solutions logo">
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a class="brand" href="./" aria-label="VoltGuard Solutions home">
+        <img class="brand-logo" src="FINAL.png" alt="VoltGuard Solutions">
       </a>
-      <p>Automatische handhaving van EV-laadplaatsen voor toekomstgerichte steden en gemeenten.</p>
       <nav aria-label="Footer navigatie">
+        <a href="./">Home</a>
         <a href="wat-we-doen/">Wat we doen</a>
         <a href="over-ons/">Over ons</a>
         <a href="#contact">Contact</a>
       </nav>
-      <span>Copyright 2026 VoltGuard Solutions.</span>
+      <p>Copyright <span data-year></span> VoltGuard Solutions.</p>
     </div>
   </footer>
 </body>

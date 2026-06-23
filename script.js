@@ -1,131 +1,110 @@
 const header = document.getElementById("site-header");
-const progress = document.getElementById("scroll-progress");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileNav = document.getElementById("mobile-nav");
-const navLinks = [...document.querySelectorAll(".primary-nav a, .mobile-nav a[href^='#']")];
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const yearNodes = document.querySelectorAll("[data-year]");
+const forms = document.querySelectorAll("[data-mail-form]");
 
-let lastScrollY = window.scrollY;
+yearNodes.forEach((node) => {
+  node.textContent = new Date().getFullYear();
+});
 
-function updateChrome() {
-  const scrollY = window.scrollY;
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  const progressWidth = maxScroll > 0 ? (scrollY / maxScroll) * 100 : 0;
+const closeMenu = () => {
+  if (!menuToggle || !mobileNav) {
+    return;
+  }
 
-  header.classList.toggle("is-scrolled", scrollY > 24);
-  header.classList.toggle("is-hidden", scrollY > 420 && scrollY > lastScrollY && !document.body.classList.contains("menu-open"));
-  progress.style.width = `${progressWidth}%`;
-  lastScrollY = scrollY;
+  menuToggle.setAttribute("aria-expanded", "false");
+  mobileNav.classList.remove("is-open");
+  mobileNav.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("nav-open");
+};
+
+if (menuToggle && mobileNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!isOpen));
+    mobileNav.classList.toggle("is-open", !isOpen);
+    mobileNav.setAttribute("aria-hidden", String(isOpen));
+    document.body.classList.toggle("nav-open", !isOpen);
+  });
+
+  mobileNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
 }
 
-window.addEventListener("scroll", updateChrome, { passive: true });
-updateChrome();
+if (header) {
+  const solidHeader = !document.querySelector(".home-hero");
 
-function setMenu(open) {
-  menuToggle.setAttribute("aria-expanded", String(open));
-  mobileNav.classList.toggle("is-open", open);
-  mobileNav.setAttribute("aria-hidden", String(!open));
-  document.body.classList.toggle("menu-open", open);
+  if (solidHeader) {
+    header.classList.add("header-solid");
+  }
+
+  const syncHeader = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
+
+  syncHeader();
+  window.addEventListener("scroll", syncHeader, { passive: true });
 }
-
-menuToggle.addEventListener("click", () => {
-  setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
-});
-
-mobileNav.addEventListener("click", (event) => {
-  if (event.target.closest("a")) {
-    setMenu(false);
-  }
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    setMenu(false);
-  }
-});
-
-document.addEventListener("click", (event) => {
-  if (!event.target.closest(".site-header")) {
-    setMenu(false);
-  }
-});
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.16,
-  rootMargin: "0px 0px -70px 0px"
-});
-
-document.querySelectorAll(".reveal").forEach((element) => {
-  revealObserver.observe(element);
-});
-
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      return;
-    }
-
-    const id = entry.target.id;
-    navLinks.forEach((link) => {
-      link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
-    });
-  });
-}, {
-  rootMargin: "-35% 0px -55% 0px"
-});
-
-document.querySelectorAll("main section[id]").forEach((section) => {
-  sectionObserver.observe(section);
-});
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
-    const target = document.querySelector(anchor.getAttribute("href"));
+    const targetId = anchor.getAttribute("href");
+
+    if (!targetId || targetId === "#") {
+      return;
+    }
+
+    const target = document.querySelector(targetId);
     if (!target) {
       return;
     }
 
     event.preventDefault();
-    target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    const offset = header ? header.offsetHeight + 24 : 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+    closeMenu();
   });
 });
 
-if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
-  document.querySelectorAll("[data-tilt]").forEach((card) => {
-    card.addEventListener("pointermove", (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const rotateX = ((y / rect.height) - 0.5) * -7;
-      const rotateY = ((x / rect.width) - 0.5) * 7;
+const setFeedback = (form, message, className) => {
+  const feedback = form.querySelector(".form-feedback");
+  if (!feedback) {
+    return;
+  }
 
-      card.style.setProperty("--mx", `${(x / rect.width) * 100}%`);
-      card.style.setProperty("--my", `${(y / rect.height) * 100}%`);
-      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+  feedback.textContent = message;
+  feedback.classList.remove("is-error", "is-success");
+
+  if (className) {
+    feedback.classList.add(className);
+  }
+};
+
+forms.forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) {
+      return;
+    }
+
+    const recipient = document.body.dataset.contactEmail || "info@voltguardsolutions.be";
+    const data = new FormData(form);
+    const lines = [];
+
+    data.forEach((value, key) => {
+      const cleanValue = String(value).trim();
+      if (cleanValue) {
+        lines.push(`${key}: ${cleanValue}`);
+      }
     });
 
-    card.addEventListener("pointerleave", () => {
-      card.style.transform = "";
-    });
+    const subject = encodeURIComponent("Aanvraag via voltguardsolutions.be");
+    const body = encodeURIComponent(lines.join("\n"));
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    setFeedback(form, "Uw mailprogramma wordt geopend met de ingevulde aanvraag.", "is-success");
   });
-
-  document.querySelectorAll(".magnetic").forEach((button) => {
-    button.addEventListener("pointermove", (event) => {
-      const rect = button.getBoundingClientRect();
-      const x = event.clientX - rect.left - rect.width / 2;
-      const y = event.clientY - rect.top - rect.height / 2;
-      button.style.transform = `translate(${x * 0.16}px, ${y * 0.22}px)`;
-    });
-
-    button.addEventListener("pointerleave", () => {
-      button.style.transform = "";
-    });
-  });
-}
+});
