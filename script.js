@@ -34,7 +34,7 @@ if (menuToggle && mobileNav) {
 }
 
 if (header) {
-  const solidHeader = !document.querySelector(".home-hero");
+  const solidHeader = !document.querySelector(".home-hero, .page-hero");
 
   if (solidHeader) {
     header.classList.add("header-solid");
